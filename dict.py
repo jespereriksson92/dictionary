@@ -1,5 +1,6 @@
 import psycopg2
 
+#Jag hade redan ändrat från C till conn
 def get_db_connection():
     conn = psycopg2.connect(
             user="postgres",
