@@ -8,7 +8,7 @@ def get_db_connection():
             port="5432",
             database="dict_db")
     return conn
-
+#gives the list
 def read_dict():
     conn = get_db_connection()
     cur = conn.cursor()
@@ -17,18 +17,21 @@ def read_dict():
     cur.close()
     conn.close()
     return rows
+#adds words and their translation
 def add_word(word, translation):
     conn = get_db_connection()
     cur = conn.cursor()
     cur.execute(f"INSERT INTO dictionary (word, translation) VALUES ('{word}', '{translation}');")
     cur.close()
     conn.close()
+#deletes!
 def delete_word(ID):
     conn = get_db_connection()
     cur = conn.cursor()
     cur.execute(f"DELETE FROM dictionary WHERE id = '{ID}';")
     cur.close()
     conn.close()
+#saves
 def save_dict():
     conn = get_db_connection()
     cur = conn.cursor()
