@@ -44,8 +44,9 @@ while True: ## REPL - Read Execute Program Loop
     print("Welcome! \nTo use the dictionary, use the following commands: list, add, delete and quit. "
     "\nHave fun!")
     cmd = input("Command: ")
-    if cmd == "list":
-        print(read_dict())
+    if cmd == "list": 
+        for i, wd, trans in read_dict(): 
+            print(f"{i}: {wd} - {trans}")
     elif cmd == "add":
         word = input("  Word: ")
         translation = input("  Translation: ")
