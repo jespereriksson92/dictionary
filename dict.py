@@ -46,7 +46,8 @@ def main():
         "\nHave fun!")
         cmd = input("Command: ")
         if cmd == "list":
-            print(read_dict())
+            for i, wd, trans in read_dict(): 
+                print(f"{i}: {wd} - {trans}")
         elif cmd == "add":
             word = input("  Word: ")
             translation = input("  Translation: ")
