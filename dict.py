@@ -40,21 +40,24 @@ def save_dict():
     cur.close()
     conn.close()
 
-while True: ## REPL - Read Execute Program Loop
-    print("Welcome! \nTo use the dictionary, use the following commands: list, add, delete and quit. "
-    "\nHave fun!")
-    cmd = input("Command: ")
-    if cmd == "list":
-        print(read_dict())
-    elif cmd == "add":
-        word = input("  Word: ")
-        translation = input("  Translation: ")
-        add_word(word, translation)
-        print(f" Added word {word}")
-    elif cmd == "delete":
-        ID = input("  ID: ")
-        delete_word(ID)
-    elif cmd == "quit":
-        save_dict()
-        print("Bye bye!")
-        exit()
+def main():
+    while True: ## REPL - Read Execute Program Loop
+        print("Welcome! \nTo use the dictionary, use the following commands: list, add, delete and quit. "
+        "\nHave fun!")
+        cmd = input("Command: ")
+        if cmd == "list":
+            print(read_dict())
+        elif cmd == "add":
+            word = input("  Word: ")
+            translation = input("  Translation: ")
+            add_word(word, translation)
+            print(f" Added word {word}")
+        elif cmd == "delete":
+            ID = input("  ID: ")
+            delete_word(ID)
+        elif cmd == "quit":
+            save_dict()
+            print("Bye bye!")
+            exit()
+
+main()
